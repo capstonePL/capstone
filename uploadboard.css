@@ -1,0 +1,23 @@
+body {
+    font-family: 'Hahmlet', serif;
+    background-color: #e0e0e0;
+}
+
+button {
+    font-size: 21px;
+    background-color: #2e2e2e;
+    color:aliceblue;
+    border: 0;
+    cursor: 0;
+}
+
+table {
+    font-size: 16px;  
+}
+
+h1 {
+    text-align: center;
+    color: #842029;
+    font-family: 'Koulen', cursive;
+    font-size: 50px;
+}
