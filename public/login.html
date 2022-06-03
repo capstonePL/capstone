@@ -56,6 +56,8 @@
           class="rounded-pill"
           style="background-color: transparent; border: 0 solid black"
           placeholder="Email"
+          id = "email"
+          
         />
       </p>
       <div class="m-2 bg-success"></div>
@@ -66,6 +68,7 @@
           class="rounded-pill"
           style="background-color: transparent; border: 0 solid black"
           placeholder="pw"
+          id = "password"
         />
       </p>
       <p>
@@ -107,5 +110,33 @@
         </button>
       </p>
     </form>
+    <script defer src="/__/firebase/9.8.2/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/9.8.2/firebase-auth-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.8.2/firebase-firestore-compat.js"
+    ></script>
+    <script defer src="/__/firebase/9.8.2/firebase-storage-compat.js"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCbSwO4dkNm8nOTsSl-HCXuqNIYhhzL6n0",
+        authDomain: "capstone-86951.firebaseapp.com",
+        projectId: "capstone-86951",
+        storageBucket: "capstone-86951.appspot.com",
+        messagingSenderId: "1063457306959",
+        appId: "1:1063457306959:web:076f25b254736f0a476d3a",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
+    
   </body>
 </html>
