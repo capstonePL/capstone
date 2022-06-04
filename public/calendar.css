@@ -289,6 +289,11 @@ h4 {
   color: #474747;
   text-align: center;
 }
+.clo {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #98938c;
+  color: #ffffff;
+}
 
 .gnb {
   width: 100%;
