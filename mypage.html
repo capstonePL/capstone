@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="mypage.css" />
+    <title>mypage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0f868d6f71.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">MY PAGE</div>
+    <h4 style="margin-left: 20px">님</h4>
+    <div class="detaile" style="line-height: 300%; margin-top: 50px">
+      <div class="name">
+        닉네임
+        <button
+          class="btn-name change"
+          id="show"
+          style="float: right; margin-top: 17px"
+        >
+          변경하기 >
+        </button>
+        <div class="background">
+          <div class="window">
+            <div class="popup">
+              <button
+                id="close"
+                class="clo"
+                style="
+                  float: right;
+                  margin-top: 10px;
+                  margin-left: 0px;
+                  margin-right: 7px;
+                  padding-top: 2px;
+                  padding-bottom: 2px;
+                "
+              >
+                X
+              </button>
+              <h4 style="margin-left: 20px"><닉네임 변경하기></h4>
+              <input
+                type="text"
+                name="nick"
+                placeholder="닉네임을 입력하세요."
+                style="
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+                  padding-left: 10px;
+                  padding-right: 60px;
+                  margin-left: 33px;
+                "
+                class="nick"
+                id="modifyNickname"
+              />
+              <input
+                type="submit"
+                value="수정"
+                style="padding-top: 8px; padding-bottom: 10px"
+                class="nick_change"
+                id="modifyBtn"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="waith">
+        목표체중
+        <button class="btn-waith change" style="float: right; margin-top: 17px">
+          >
+        </button>
+      </div>
+      <div class="set">설정</div>
+    </div>
+
+    <nav class="gnb">
+      <a href="group.html" class="group mouse-effect">
+        <i class="fa-solid fa-user-group"></i>
+      </a>
+      <a href="calendar.html" class="calendar mouse-effect">
+        <i class="fa-solid fa-calendar-days"></i>
+      </a>
+      <a href="index.html" class="home mouse-effect">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <a href="uploadboard.html" class="routine mouse-effect">
+        <i class="fa-solid fa-upload"></i>
+      </a>
+      <a href="mypage.html" class="my mouse-effect active">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
+    </nav>
+    <script src="mypage.js"></script>
+  </body>
+</html>
