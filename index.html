@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script
+      src="https://kit.fontawesome.com/0f868d6f71.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="title">
+      <h2>HOMEMOVE</h2>
+    </div>
+    <div class="titledate">
+      <div class="underba" style="margin-top: 100px">
+        ----------------------------
+      </div>
+      <div class="date">
+        <script>
+          date = new Date().toLocaleDateString();
+          document.write(date);
+        </script>
+      </div>
+      <div class="underba">----------------------------</div>
+    </div>
+    <div class="watch">
+      <div class="watch_1">
+        <div class="time">00 : 00 : 00</div>
+        <br />
+        <div class="controls" style="margin-top: 40px">
+          <button id="start">Start</button>
+          <button id="stop">Stop</button>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+    </div>
+    <nav class="gnb">
+      <a href="groupadd.html" class="group mouse-effect">
+        <i class="fa-solid fa-user-group"></i>
+      </a>
+      <a href="calendar.html" class="calendar mouse-effect">
+        <i class="fa-solid fa-calendar-days"></i>
+      </a>
+      <a href="index.html" class="home mouse-effect active">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <a href="uploadboard.html" class="routine mouse-effect">
+        <i class="fa-solid fa-upload"></i>
+      </a>
+      <a href="mypage.html" class="my mouse-effect">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
+    </nav>
+    <body style="overflow-y: hidden"></body>
+
+    <script src="main.js"></script>
+  </body>
+</html>

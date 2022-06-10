@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calendar.css" />
+    <title>calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0f868d6f71.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="calendar">
+      <div class="header" style="margin-top: 35px">
+        <div class="year-month"></div>
+        <div class="nav">
+          <button class="nav-btn go-prev" onclick="prevMonth()"><</button>
+          <button class="nav-btn go-today" onclick="goToday()">Today</button>
+          <button class="nav-btn go-next" onclick="nextMonth()">></button>
+        </div>
+      </div>
+      <div class="main" style="margin-top: 29px">
+        <div class="days">
+          <div class="day">일</div>
+          <div class="day">월</div>
+          <div class="day">화</div>
+          <div class="day">수</div>
+          <div class="day">목</div>
+          <div class="day">금</div>
+          <div class="day">토</div>
+        </div>
+        <div class="dates"></div>
+        <div id="show">
+          <button
+            class="w-btn w-btn-indigo"
+            type="button"
+            style="margin-top: 60px; margin-left: 90px"
+          >
+            TO DO
+          </button>
+        </div>
+        <div class="background">
+          <div class="window">
+            <div style="overflow: auto" class="popup">
+              <button
+                id="close"
+                class="clo"
+                style="
+                  padding-top: 0px;
+                  padding-left: 5px;
+                  padding-right: 5px;
+                  margin-left: 326px;
+                  margin-top: 5px;
+                  margin-right: 0px;
+                "
+              >
+                X
+              </button>
+              <div class="dodate">
+                <script>
+                  date = new Date().toLocaleDateString();
+                  document.write(date);
+                </script>
+              </div>
+              <div class="container">
+                <h1>TO DO List</h1>
+                <form class="row">
+                  <input
+                    type="text"
+                    name="task"
+                    id="task"
+                    placeholder="내용을 입력하세요.."
+                    required
+                  />
+                  <input
+                    type="button"
+                    id="submitData"
+                    name="submitData"
+                    value="+"
+                    class="icon"
+                    required
+                  />
+                </form>
+                <h4>My Tasks</h4>
+                <div class="row">
+                  <ul class="task_list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="gnb">
+      <a href="groupadd.html" class="group mouse-effect">
+        <i class="fa-solid fa-user-group"></i>
+      </a>
+      <a
+        href="calendar.html"
+        class="calendar mouse-effect active"
+        style="margin-top: 0px; margin-right: 0px; margin-left: 0px"
+      >
+        <i class="fa-solid fa-calendar-days"></i>
+      </a>
+      <a href="index.html" class="home mouse-effect">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <a href="uploadboard.html" class="routine mouse-effect">
+        <i class="fa-solid fa-upload"></i>
+      </a>
+      <a href="mypage.html" class="my mouse-effect">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
+    </nav>
+    <script src="calendar.js"></script>
+  </body>
+</html>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+  import {
+    getFirestore,
+    setDoc,
+    addDoc,
+    doc,
+    collection,
+  } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDTVr0a8LU3blZeAuckU4hViAIu622salU",
+    authDomain: "capdi-6626e.firebaseapp.com",
+    databaseURL: "https://capdi-6626e-default-rtdb.firebaseio.com",
+    projectId: "capdi-6626e",
+    storageBucket: "capdi-6626e.appspot.com",
+    messagingSenderId: "597227556809",
+    appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  submitData.addEventListener("click", (e) => {
+    var task = document.getElementById("task").value;
+
+    addDoc(collection(db, "todos"), {
+      task: task,
+    });
+  });
+</script>

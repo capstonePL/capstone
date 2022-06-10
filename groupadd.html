@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>group add</title>
+    <link rel="stylesheet" href="groupadd.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0f868d6f71.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="title">
+      <h1>내 그룹</h1>
+    </div>
+
+    <div class="detaile">
+      <div id="tasks-container" class="a"></div>
+      <div class="box"></div>
+      <ul
+        class="group_people"
+        style="margin-top: 50px; margin-left: 60px; line-height: 500%"
+      >
+        <li class="nick">
+          <img src="" alt="" />
+          닉네임
+        </li>
+        <li class="nick">
+          <img src="" alt="" />
+          닉네임
+        </li>
+        <li class="nick">
+          <img src="" alt="" />
+          닉네임
+        </li>
+      </ul>
+      <div style="text-align: center">
+        <button
+          id="show"
+          class="plus"
+          type="button"
+          onclick="location.href='groupcre.html'"
+          style="
+            padding-left: ‒5;
+            padding-left: 10px;
+            border-right-width: 1px;
+            border-top-width: 0px;
+            padding-right: 10px;
+            margin-top: 80px;
+          "
+        >
+          +
+        </button>
+      </div>
+    </div>
+
+    <nav class="gnb">
+      <a href="groupadd.html" class="group mouse-effect active">
+        <i class="fa-solid fa-user-group"></i>
+      </a>
+      <a href="calendar.html" class="calendar mouse-effect">
+        <i class="fa-solid fa-calendar-days"></i>
+      </a>
+      <a href="index.html" class="home mouse-effect">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <a href="uploadboard.html" class="routine mouse-effect">
+        <i class="fa-solid fa-upload"></i>
+      </a>
+      <a href="mypage.html" class="my mouse-effect">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
+    </nav>
+  </body>
+</html>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+  import {
+    getFirestore,
+    setDoc,
+    addDoc,
+    doc,
+    collection,
+    getDocs,
+    onSnapshot,
+  } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDTVr0a8LU3blZeAuckU4hViAIu622salU",
+    authDomain: "capdi-6626e.firebaseapp.com",
+    databaseURL: "https://capdi-6626e-default-rtdb.firebaseio.com",
+    projectId: "capdi-6626e",
+    storageBucket: "capdi-6626e.appspot.com",
+    messagingSenderId: "597227556809",
+    appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore();
+
+  const tasksContainer = document.getElementById("tasks-container");
+
+  window.addEventListener("DOMContentLoaded", async () => {
+    onGetTasks((querySnapShot) => {
+      let html = "";
+
+      querySnapShot.forEach((doc) => {
+        const task = doc.data();
+
+        html += `
+              <div>
+                <h2>${task.name}</h2>
+                <div class="underba"></div>
+                <h4>목표시간 : ${task.time}시간 <br>인원 : ${task.people}명</h4><br>
+                <h4>" ${task.notice} "</h4>
+              </div>
+        `;
+      });
+      tasksContainer.innerHTML = html;
+    });
+  });
+
+  export const getTasks = () => getDocs(collection(db, "group"));
+
+  export const onGetTasks = (callback) =>
+    onSnapshot(collection(db, "group"), callback);
+</script>
