@@ -1,0 +1,143 @@
+.gnb {
+  width: 100%;
+  height: 72px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fafafa;
+  box-shadow: inset 0 1px 0 0 rgba(17, 10, 10, 0.08);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.gnb a {
+  width: 20%;
+  height: 100%;
+  border: 2px solid #d8d8d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+}
+.gnb .active {
+  opacity: 1;
+  color: #574a5a;
+}
+body {
+  font-family: "Gowun Batang", serif;
+}
+.main {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-bottom: 1.5px solid #0a090a5d;
+  margin-top: 50px;
+  margin-right: 20px;
+}
+
+.detaile {
+  font-size: 22px;
+  margin: 20px;
+  padding: 0;
+}
+.background {
+  position: fixed;
+  font-family: "Hahmlet", serif;
+  font-weight: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+
+  /* 숨기기 */
+  z-index: -1;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+.window {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+
+  /* 임시 지정 */
+  width: 350px;
+  height: 500px;
+
+  /* 초기에 약간 아래에 배치 */
+  transform: translate(-50%, -40%);
+}
+
+.show .popup {
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+.nick {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+.nick_change {
+  border: 1px solid rgb(249, 248, 248);
+  background-color: #e04747;
+  color: #fafafa;
+}
+.btn-set {
+  background: #d92027;
+  margin-top: 40px;
+  width: 300px;
+  border: 1px solid rgb(230, 77, 77);
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 19px;
+  letter-spacing: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+}
+.btn-set:active {
+  transform: scale(0.9);
+}
+.write {
+  font-size: 15px;
+  border: 2px solid rgba(17, 10, 10, 0.08);
+  text-align: left;
+}
+.com {
+  width: 100px;
+  margin: auto;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #d92027;
+  color: #ede0e0;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+.com:active {
+  transform: scale(0.9);
+}
+a {
+  text-decoration: none;
+}
