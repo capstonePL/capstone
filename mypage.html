@@ -12,74 +12,134 @@
       href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
       rel="stylesheet"
     />
+    
     <script
       src="https://kit.fontawesome.com/0f868d6f71.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@900&family=Koulen&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap");
+    </style>
+
+  
+    
   </head>
   <body>
-    <div class="main">MY PAGE</div>
-    <h4 style="margin-left: 20px">님</h4>
-    <div class="detaile" style="line-height: 300%; margin-top: 50px">
-      <div class="name">
-        닉네임
-        <button
-          class="btn-name change"
-          id="show"
-          style="float: right; margin-top: 17px"
-        >
-          변경하기 >
-        </button>
-        <div class="background">
-          <div class="window">
-            <div class="popup">
-              <button
-                id="close"
-                class="clo"
-                style="
-                  float: right;
-                  margin-top: 10px;
-                  margin-left: 0px;
-                  margin-right: 7px;
-                  padding-top: 2px;
-                  padding-bottom: 2px;
-                "
-              >
-                X
-              </button>
-              <h4 style="margin-left: 20px"><닉네임 변경하기></h4>
-              <input
-                type="text"
-                name="nick"
-                placeholder="닉네임을 입력하세요."
-                style="
-                  padding-top: 10px;
-                  padding-bottom: 10px;
-                  padding-left: 10px;
-                  padding-right: 60px;
-                  margin-left: 33px;
-                "
-                class="nick"
-                id="modifyNickname"
-              />
-              <input
-                type="submit"
-                value="수정"
-                style="padding-top: 8px; padding-bottom: 10px"
-                class="nick_change"
-                id="modifyBtn"
-              />
+    <h1 class="main">MY PAGE</h1>
+    <div id="mypage-container" style="margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+  
+    margin-top: 70px;"></div>
+    <div class="detaile" style="line-height: 500%; margin-top: 50px">
+      
+    </div>
+    <div class="btn-edit" style="text-align: center">
+      <button id="show" class="btn-set">프로필 수정하기</button>
+      <div class="background">
+        <div class="window">
+          <div class="popup">
+            <button
+              id="close"
+              class="clo"
+              style="
+                float: right;
+                margin-top: 10px;
+                margin-left: 0px;
+                margin-right: 7px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+              "
+            >
+              X
+            </button>
+            <form id="task-form">
+              <h3>프로필 수정</h3>
+              
+              <div class="detaile_all" style="
+               line-height: 400%;
+              ">
+              <p>
+                <div class="nick_name" style="font-weight: bold;" 
+            >닉네임
+                <input
+                  type="text"
+                  id="nickname"
+                  class="write"
+                  placeholder="닉네임을 적어주세요." 
+                  style="
+                  
+                  margin-right: 0px;
+                  margin-left: 20px;
+                  padding-top: 12px;
+                  padding-bottom: 12px;
+                  padding-right: 5px;
+                  padding-left: 5px;
+                  margin-top: 50px;
+"
+                  
+              
+                />
+              </div>
+              </p>
+              
+              <p>
+                <div class="now" style="font-weight: bold;">현재체중
+                <input
+                  type="text"
+                  id="now"
+                  class="write"
+                  placeholder="0kg"
+                  style="
+                  
+                  margin-right: 0px;
+                  margin-left: 10px;
+                  padding-top: 12px;
+                  padding-bottom: 12px;
+                  padding-right: 5px;
+                  padding-left: 5px;
+                  
+              "
+                />
+              </div>
+              </p>
+              <p>
+                <div id="goal" style="font-weight: bold;">목표체중
+                <input
+                  type="text"
+                  id="goal"
+                  class="write"
+                  placeholder="0kg"
+                  style="
+                  
+                  margin-right: 0px;
+                  margin-left: 10px;
+                  padding-top: 12px;
+                  padding-bottom: 12px;
+                  padding-right: 5px;
+                  padding-left: 5px;
+                  
+              "
+              required
+                />
+              </div>
+              </p>
             </div>
+              
+              <div style="text-align: center">
+              <button id="btn-task-save" class="com" style="
+              
+              padding-top: 6px;
+              padding-bottom: 6px;
+              margin-top: 60px;
+          
+                ">완료</button>
+                </div>
+            </form>
           </div>
         </div>
       </div>
-      <div class="waith">
-        목표체중
-        <button class="btn-waith change" style="float: right; margin-top: 17px">
-          >
-        </button>
-      </div>
-      <div class="set">설정</div>
     </div>
 
     <nav class="gnb">
@@ -113,3 +173,54 @@
   document.querySelector("#show").addEventListener("click", show);
   document.querySelector("#close").addEventListener("click", close);
 </script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+    import { getFirestore, setDoc, addDoc, doc, collection, getDocs, onSnapshot, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDTVr0a8LU3blZeAuckU4hViAIu622salU",
+      authDomain: "capdi-6626e.firebaseapp.com",
+      databaseURL: "https://capdi-6626e-default-rtdb.firebaseio.com",
+      projectId: "capdi-6626e",
+      storageBucket: "capdi-6626e.appspot.com",
+      messagingSenderId: "597227556809",
+      appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
+
+    const mypageContainer = document.getElementById('mypage-container')
+
+
+    window.addEventListener("DOMContentLoaded", async () => {
+      
+        onGetmypage((querySnapShot)=> {
+        let html = "";
+
+        querySnapShot.forEach((doc) => {
+          const mypage = doc.data()
+
+          html += `
+                <div class="my" >
+                    <h4 >닉네임 : ${mypage.username}</h4>
+                    <h4>현재체중 : ${mypage.now}</h4>
+                    <h4>목표체중 : ${mypage.goal}</h4>
+                </div>
+          `
+        });
+        
+    
+        mypageContainer.innerHTML = html;
+
+      });
+  });
+
+    export const getmypage = () => getDocs(collection(db, 'mypage'))
+
+    export const onGetmypage = (callback) => onSnapshot(collection(db, "mypage"), callback)
+
+</script>
+
