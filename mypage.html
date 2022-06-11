@@ -30,8 +30,8 @@
     <div id="mypage-container" style="margin-left: 20px;
     margin-right: 20px;
     text-align: center;
-  
     margin-top: 70px;"></div>
+
     <div class="detaile" style="line-height: 500%; margin-top: 50px">
       
     </div>
@@ -54,7 +54,7 @@
             >
               X
             </button>
-            <form id="task-form">
+            <form id="mypage-form">
               <h3>프로필 수정</h3>
               
               <div class="detaile_all" style="
@@ -65,7 +65,7 @@
             >닉네임
                 <input
                   type="text"
-                  id="nickname"
+                  id="username"
                   class="write"
                   placeholder="닉네임을 적어주세요." 
                   style="
@@ -105,7 +105,7 @@
               </div>
               </p>
               <p>
-                <div id="goal" style="font-weight: bold;">목표체중
+                <div style="font-weight: bold;">목표체중
                 <input
                   type="text"
                   id="goal"
@@ -121,15 +121,15 @@
                   padding-left: 5px;
                   
               "
-              required
+              
                 />
               </div>
               </p>
             </div>
               
               <div style="text-align: center">
-              <button id="btn-task-save" class="com" style="
-              
+              <button type="button" id="updatemypage" class="com" 
+              style="
               padding-top: 6px;
               padding-bottom: 6px;
               margin-top: 60px;
@@ -172,11 +172,13 @@
 
   document.querySelector("#show").addEventListener("click", show);
   document.querySelector("#close").addEventListener("click", close);
+
+
 </script>
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-    import { getFirestore, setDoc, addDoc, doc, collection, getDocs, onSnapshot, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+    import { getFirestore, deleteDoc, updateDoc, setDoc, addDoc, doc, collection, getDocs, onSnapshot, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyDTVr0a8LU3blZeAuckU4hViAIu622salU",
@@ -191,8 +193,8 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
-
     const mypageContainer = document.getElementById('mypage-container')
+    const mypageForm = document.getElementById("mypage-form")
 
 
     window.addEventListener("DOMContentLoaded", async () => {
@@ -219,8 +221,28 @@
   });
 
     export const getmypage = () => getDocs(collection(db, 'mypage'))
-
     export const onGetmypage = (callback) => onSnapshot(collection(db, "mypage"), callback)
 
-</script>
 
+    updatemypage.addEventListener('click', (e) => {
+      
+      var username = document.getElementById('username').value;
+      var now = document.getElementById('now').value;
+      var goal = document.getElementById('goal').value;
+
+      updateDoc(doc(db, "mypage", 'Obl9K6CrM5Ohfxxmymua'), {
+        username: username,
+        now: now,
+        goal: goal
+      });
+
+
+      mypageForm.reset()
+      alert('프로필 수정 완료!');
+      window.location.href = "mypage.html";
+
+    });
+
+
+
+</script>
