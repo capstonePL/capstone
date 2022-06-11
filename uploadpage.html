@@ -43,27 +43,41 @@
 <body>
 
 
-<button type="button" onclick="location.href='uploadboard.html'" class="btn-close" style="margin-top: 15px;margin-left: 338px;" class="position-absolute top-0 end-10" aria-label="Close"></button>
+<button type="button" onclick="location.href='uploaddetail.html'" class="btn-close" style="margin-top: 15px;margin-left: 338px;" class="position-absolute top-0 end-10" aria-label="Close"></button>
 
-<h2 style="margin-bottom: 40px;margin-top: 20px;">루틴 영상 업로드</h3> 
+<h2 style="margin-bottom: 40px;margin-top: 60px;">운동 영상 추천하기</h3> 
 
 <div class="m-2 bg-success"></div>
 
   <form id="task-form" style="text-align: center;margin-left: 15px;margin-right: 15px;">  
 
-        <input type="text" class="form-control" id="task-title" placeholder="글 제목을 작성하세요">
+        <input type="text" style="
+        padding-top: 10px;
+        padding-bottom: 10px;
+    " class="form-control" id="task-title" placeholder="글 제목을 작성하세요">
     
         <div class="m-2 bg-success"></div> 
 
-        <textarea placeholder="내용을 입력하세요" class="form-control" id="task-data" rows="3"></textarea>
+        <textarea style="
+        padding-bottom: 230px;
+    " placeholder="추천하실 유튜브 영상을 '공유 -> 퍼하기'의 소스코드를 붙여넣으세요 (width를 100%으로 바꿔주세요) " class="form-control" id="task-data" rows="3"></textarea>
          
         <div class="form-group">
           <label for="exampleInputFile"></label>
           <input type="file" id="exampleInputFile">
         </div>
 
-        <a href="uploadboard.html">
-            <button id="btn-task-save" class="rounded-pill" style="margin-left: 4px;padding-left: 150px;padding-right: 150px;padding-top:20px 10px;padding-bottom: 10px;padding-top: 10px;margin-top: 27px;">등록</button>
+        <a href="uploaddetail.html">
+            <button id="btn-task-save" class="rounded-pill" style="
+            margin-left: 4px;
+            padding-left: 12
+            0px;
+            padding-right: 120px;padding-top:20px 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin-top: 27px;
+            padding-left: 120px;
+            ">추천하기</button>
         </a>
 
     </form>
