@@ -69,12 +69,14 @@
             opacity: 1;
             color: #574a5a;
             }
-        #footer{
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 6rem;
-             }   
+        button {
+            font-size: 18px;
+            background-color: black;
+            color: aliceblue;
+            border: 0;
+            cursor: 0;  
+          }
+          
     </style>
 
   </head>
@@ -83,26 +85,18 @@
 
     <div class="container" style="text-align: center" style="margin-top: 45px; text-align: center;">
       
-      <h1 style="margin-top: 70px;">루틴 영상 게시판</h1>
+      <h1 style="margin-top: 70px;">오늘의 운동 영상</h1>
 
       <div class="m-3 bg-success"></div>
 
       <div class="form-row float-right">
         <button
           type="button"
-          class="btn btn-dark btn-sm"
-          style="
-            margin-left: 291px;
-            margin-top: 15px;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 5px;
-            margin-bottom: 30px;
-
-          "
+          class="rounded-pill"
+          style="margin-left: 247px;padding-left: 20px;padding-right: 20px;padding-top:20px 10px;padding-bottom: 10px;padding-top: 10px;margin-top: 10px;margin-bottom: 10px;"
           onclick="location.href='uploadpage.html'"
         >
-          글쓰기
+          추천하기
         </button>
       </div>
 
@@ -111,7 +105,7 @@
 
     </div>
 
-    <div id="footer">
+    <div class="footer">
         <nav class="gnb">
             <a href="group.html" class="group mouse-effect">
             <i class="fa-solid fa-user-group"></i>
@@ -122,14 +116,15 @@
             <a href="index.html" class="home mouse-effect">
             <i class="fa-solid fa-house"></i>
             </a>
-            <a href="uploadboard.html" class="routine mouse-effect active">
+            <a href="uploaddetail.html" class="routine mouse-effect active">
             <i class="fa-solid fa-upload"></i>
             </a>
             <a href="mypage.html" class="my mouse-effect">
             <i class="fa-solid fa-circle-user"></i>
             </a>
         </nav>
-    </div>
+      </div>
+    
 
 </body>
 </html>
@@ -166,11 +161,13 @@
   
           html += `
                 <div>
+                  <div class=container>
                     <h5>${task.title}</h5>
                     <hr color="black">
                     <h3>${task.data}<h3>
-                  <br>
-                  </a>
+                    <br>
+                    <br>
+                  </div>
                 </div>
           `
         });

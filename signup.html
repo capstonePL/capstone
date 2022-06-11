@@ -140,14 +140,14 @@ signup.addEventListener('click',(e) => {
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
       // Signed in
-      const user = userCredential.user;
-
+      const user = userCredential.user
+      
       alert('회원가입 성공!');
       
       taskForm.reset()
       
       window.location.href = "index.html";
-      
+
       // ...
   })
   .catch((error) => {
@@ -169,12 +169,13 @@ taskForm.addEventListener('submit', (e) => {
       
       const email = taskForm['email']
       const username = taskForm['username']
+      
 
       saveTask(email.value, username.value)
 
   })
 
 export const saveTask = (email, username) => 
-  addDoc(collection(db, "users"), { email, username });
+  setDoc(collection(db, "users"), { email, username });
 
 </script>
