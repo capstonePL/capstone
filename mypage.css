@@ -35,11 +35,6 @@ body {
   margin-right: 20px;
 }
 
-.detaile {
-  font-size: 22px;
-  margin: 20px;
-  padding: 0;
-}
 .background {
   position: fixed;
   font-family: "Hahmlet", serif;
@@ -88,14 +83,7 @@ body {
   transform: translate(-50%, -50%);
   transition: all 0.5s;
 }
-.nick {
-  border: 2px solid rgba(0, 0, 0, 0.3);
-}
-.nick_change {
-  border: 1px solid rgb(249, 248, 248);
-  background-color: #e04747;
-  color: #fafafa;
-}
+
 .btn-set {
   background: #d92027;
   margin-top: 40px;
@@ -115,10 +103,10 @@ body {
 .btn-set:active {
   transform: scale(0.9);
 }
-.write {
-  font-size: 15px;
+
+.my {
+  font-size: 25px;
   border: 2px solid rgba(17, 10, 10, 0.08);
-  text-align: left;
 }
 .com {
   width: 100px;
@@ -140,4 +128,8 @@ body {
 }
 a {
   text-decoration: none;
+}
+.write {
+  border: 1px solid #fff;
+  letter-spacing: 2px;
 }
