@@ -176,6 +176,6 @@ taskForm.addEventListener('submit', (e) => {
   })
 
 export const saveTask = (email, username) => 
-  setDoc(collection(db, "users"), { email, username });
+  addDoc(collection(db, "users"), { email, username });
 
 </script>
