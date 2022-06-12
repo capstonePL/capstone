@@ -55,13 +55,13 @@
 
   <body>
     <div class="m-4 bg-success"></div>
-    <h1 style="margin-top: 130px; margin-bottom: 60px;">HOMEMOVE</h1>
+    <h1 style="margin-top: 90px;margin-bottom: 60px;">HOMEMOVE</h1>
 
     <div class="m-4 bg-success"></div>
 
     <form id="task-form"  style="text-align: center";>
         <p style="margin-bottom: 40px">
-            <input type="text" id="username" class="rounded-pill" name="username" placeholder="이름을 입력하세요"
+            <input type="text" id="username" class="rounded-pill" name="username" placeholder="닉네임을 입력하세요"
             style="
             border: 0 solid black;
             padding-top: 5px;
@@ -87,6 +87,24 @@
             padding-left: 10px;
             "    required>
             </p>
+            <p style="margin-bottom: 40px">
+              <input type="text" id="now" class="rounded-pill" name="now" placeholder="현재 체중을 입력하세요"  
+              style="
+              border: 0 solid black;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              padding-left: 10px;
+              "    required>
+              </p>
+            <p style="margin-bottom: 40px">
+              <input type="text" id="goal" class="rounded-pill" name="goal" placeholder="목표 체중을 입력하세요"  
+              style="
+              border: 0 solid black;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              padding-left: 10px;
+              "    required>
+              </p>
             <button type="submit" id="signup" class="rounded-pill" name="signup" value="SIGN UP"
             style="
             margin-left: 0px;
@@ -136,6 +154,8 @@ signup.addEventListener('click',(e) => {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   var username = document.getElementById('username').value;
+  var now = document.getElementById('now').value;
+  var goal = document.getElementById('goal').value;
 
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -167,15 +187,17 @@ const taskForm = document.getElementById("task-form")
 taskForm.addEventListener('submit', (e) => {
       e.preventDefault()
       
-      const email = taskForm['email']
       const username = taskForm['username']
+      const email = taskForm['email']
+      const now = taskForm['now']
+      const goal = taskForm['goal']
       
 
-      saveTask(email.value, username.value)
+      saveTask(username.value, email.value, now.value, goal.value)
 
   })
 
-export const saveTask = (email, username) => 
-  addDoc(collection(db, "users"), { email, username });
+export const saveTask = (username, email, now, goal) => 
+  addDoc(collection(db, "users"), { username, email, now, goal});
 
 </script>
