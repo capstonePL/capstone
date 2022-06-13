@@ -41,22 +41,24 @@
       <div class="background">
         <div class="window">
           <div class="popup">
+            <div style="text-align: light;">
             <button
-              id="close"
-              class="clo"
-              style="
-                float: right;
-                margin-top: 10px;
-                margin-left: 0px;
-                margin-right: 7px;
-                padding-top: 2px;
-                padding-bottom: 2px;
-              "
-            >
-              X
-            </button>
+                id="close"
+                class="clo"
+                style="
+                  padding-top: 0px;
+                  padding-left: 5px;
+                  padding-right: 5px;
+                  margin-left: 310px;
+                  margin-top: 5px;
+                  margin-right: 0px;
+                "
+              >
+                X
+              </button>
+            </div>
             <form id="mypage-form">
-              <h3>프로필 수정</h3>
+              <h3 style="font-weight: bold; margin-top: 30px; ">프로필 수정</h3>
               
               <div class="detaile_all" style="
                line-height: 400%;
@@ -77,7 +79,7 @@
                   padding-bottom: 12px;
                   padding-right: 5px;
                   padding-left: 5px;
-                  margin-top: 50px;
+                  margin-top: 25px;
 "
                   
               
@@ -134,7 +136,7 @@
               style="
               padding-top: 6px;
               padding-bottom: 6px;
-              margin-top: 60px;
+              
           
                 ">완료</button>
                 </div>
@@ -226,10 +228,10 @@
                     ">닉네임 : ${mypage.username}</h4>
                     <h4 style="
                       margin-bottom: 20px;
-                  ">현재체중 : ${mypage.now}</h4>
+                  ">현재체중 : ${mypage.now} kg</h4>
                                       <h4 style="
                       margin-bottom: 40px;
-                  ">목표체중 : ${mypage.goal}</h4>
+                  ">목표체중 : ${mypage.goal} kg</h4>
                 </div>
            `
         });

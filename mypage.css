@@ -23,9 +23,7 @@
   opacity: 1;
   color: #574a5a;
 }
-body {
-  font-family: "Gowun Batang", serif;
-}
+
 .main {
   font-size: 30px;
   margin-top: 10px;
@@ -136,4 +134,10 @@ a {
 * {
   margin: 0;
   padding: 0;
+  font-family: "Hahmlet", serif;
+}
+.clo {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #98938c;
+  color: #ffffff;
 }

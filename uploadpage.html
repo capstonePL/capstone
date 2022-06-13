@@ -114,7 +114,7 @@
 
   window.addEventListener("DOMContentLoaded", () => {
 
-  })
+  
 
   const taskForm = document.getElementById("task-form")
 
@@ -130,8 +130,9 @@
 
       taskForm.reset()
 
-      window.location.href = "uploaddetail.html";
+      
   });
+});
 
   export const saveTask = (title, data) => 
         addDoc(collection(db, "board"), { title, data });

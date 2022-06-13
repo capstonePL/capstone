@@ -12,7 +12,6 @@
       crossorigin="anonymous"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@900&family=Koulen&display=swap");
@@ -29,63 +28,60 @@
       crossorigin="anonymous"
     ></script>
 
-
-
-
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-          font-family: "Hahmlet", serif;
-        }
-        h5 {
-            font-size: 25px;
-            font-weight: bold;
-        }
-        .gnb {
-            width: 100%;
-            height: 72px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            background-color: #fafafa;
-            box-shadow: inset 0 1px 0 0 rgba(17, 10, 10, 0.08);
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-            }
-        .gnb a {
-            width: 20%;
-            height: 100%;
-            border: 2px solid #d8d8d8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0.3;
-            }
-        .gnb .active {
-            opacity: 1;
-            color: #574a5a;
-            }
-        button {
-            font-size: 18px;
-            background-color: black;
-            color: aliceblue;
-            border: 0;
-            cursor: 0;  
-          }
-          
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Hahmlet", serif;
+      }
+      h5 {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .gnb {
+        width: 100%;
+        height: 72px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #fafafa;
+        box-shadow: inset 0 1px 0 0 rgba(17, 10, 10, 0.08);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+      }
+      .gnb a {
+        width: 20%;
+        height: 100%;
+        border: 2px solid #d8d8d8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.3;
+      }
+      .gnb .active {
+        opacity: 1;
+        color: #574a5a;
+      }
+      button {
+        font-size: 18px;
+        background-color: black;
+        color: aliceblue;
+        border: 0;
+        cursor: 0;
+      }
     </style>
-
   </head>
 
   <body>
-
-    <div class="container" style="text-align: center" style="margin-top: 45px; text-align: center;">
-      
-      <h1 style="margin-top: 70px;">오늘의 운동 영상</h1>
+    <div
+      class="container"
+      style="text-align: center"
+      style="margin-top: 45px; text-align: center"
+    >
+      <h1 style="margin-top: 70px">오늘의 운동 영상</h1>
 
       <div class="m-3 bg-success"></div>
 
@@ -93,73 +89,87 @@
         <button
           type="button"
           class="rounded-pill"
-          style="margin-left: 247px;padding-left: 20px;padding-right: 20px;padding-top:20px 10px;padding-bottom: 10px;padding-top: 10px;margin-top: 10px;margin-bottom: 10px;"
+          style="
+            margin-left: 247px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          "
           onclick="location.href='uploadpage.html'"
         >
           추천하기
         </button>
       </div>
 
-
       <div id="tasks-container"></div>
-
     </div>
 
     <div class="footer">
-        <nav class="gnb">
-            <a href="group.html" class="group mouse-effect">
-            <i class="fa-solid fa-user-group"></i>
-            </a>
-            <a href="calendar.html" class="calendar mouse-effect">
-            <i class="fa-solid fa-calendar-days"></i>
-            </a>
-            <a href="index.html" class="home mouse-effect">
-            <i class="fa-solid fa-house"></i>
-            </a>
-            <a href="uploaddetail.html" class="routine mouse-effect active">
-            <i class="fa-solid fa-upload"></i>
-            </a>
-            <a href="mypage.html" class="my mouse-effect">
-            <i class="fa-solid fa-circle-user"></i>
-            </a>
-        </nav>
-      </div>
-    
-
-</body>
+      <nav class="gnb">
+        <a href="group.html" class="group mouse-effect">
+          <i class="fa-solid fa-user-group"></i>
+        </a>
+        <a href="calendar.html" class="calendar mouse-effect">
+          <i class="fa-solid fa-calendar-days"></i>
+        </a>
+        <a href="timer.html" class="home mouse-effect">
+          <i class="fa-solid fa-house"></i>
+        </a>
+        <a href="uploaddetail.html" class="routine mouse-effect active">
+          <i class="fa-solid fa-upload"></i>
+        </a>
+        <a href="mypage.html" class="my mouse-effect">
+          <i class="fa-solid fa-circle-user"></i>
+        </a>
+      </nav>
+    </div>
+  </body>
 </html>
 
-
 <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-    import { getFirestore, setDoc, addDoc, doc, collection, getDocs, onSnapshot, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
-  
-    const firebaseConfig = {
-      apiKey: "AIzaSyDTVr0a8LU3blZeAuckU4hViAIu622salU",
-      authDomain: "capdi-6626e.firebaseapp.com",
-      databaseURL: "https://capdi-6626e-default-rtdb.firebaseio.com",
-      projectId: "capdi-6626e",
-      storageBucket: "capdi-6626e.appspot.com",
-      messagingSenderId: "597227556809",
-      appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore();
-    
-    const tasksContainer = document.getElementById('tasks-container')
-  
-    window.addEventListener("DOMContentLoaded", async () => {
-      
-      onGetTasks((querySnapShot)=> {
-        let html = "";
-  
-        querySnapShot.forEach((doc) => {
-          const task = doc.data()
-  
-          html += `
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+  import {
+    getFirestore,
+    setDoc,
+    addDoc,
+    doc,
+    collection,
+    getDocs,
+    onSnapshot,
+    query,
+    orderBy,
+    limit,
+  } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDTVr0a8LU3blZeAuckU4hViAIu622salU",
+    authDomain: "capdi-6626e.firebaseapp.com",
+    databaseURL: "https://capdi-6626e-default-rtdb.firebaseio.com",
+    projectId: "capdi-6626e",
+    storageBucket: "capdi-6626e.appspot.com",
+    messagingSenderId: "597227556809",
+    appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore();
+
+  const tasksContainer = document.getElementById("tasks-container");
+
+  window.addEventListener("DOMContentLoaded", async () => {
+    onGetTasks((querySnapShot) => {
+      let html = "";
+
+      querySnapShot.forEach((doc) => {
+        const task = doc.data();
+
+        html += `
                 <div>
                   <div class=container>
                     <h5>${task.title}</h5>
@@ -169,21 +179,15 @@
                     <br>
                   </div>
                 </div>
-          `
-        });
-        
-    
-        tasksContainer.innerHTML = html;
-  
+          `;
       });
+
+      tasksContainer.innerHTML = html;
+    });
   });
-  
-  
-    export const getTasks = () => getDocs(collection(db, 'board'))
-  
-    export const onGetTasks = (callback) => onSnapshot(collection(db, "board"), callback) 
-  
-  
-  
-  
-  </script>
+
+  export const getTasks = () => getDocs(collection(db, "board"));
+
+  export const onGetTasks = (callback) =>
+    onSnapshot(collection(db, "board"), callback);
+</script>

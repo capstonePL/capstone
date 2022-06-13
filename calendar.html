@@ -145,7 +145,7 @@
     query,
     orderBy,
     limit,
-    deleteDoc
+    deleteDoc,
   } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -172,13 +172,12 @@
       task: task,
     });
 
-    alert('할일 추가!')
-    rowform.reset()
+    alert("할일 추가!");
+    rowform.reset();
   });
 
   const todoContainer = document.getElementById("todo-container");
   const rowform = document.getElementById("row");
-  
 
   window.addEventListener("DOMContentLoaded", async () => {
     onGettodo((querySnapShot) => {
@@ -195,15 +194,15 @@
       });
 
       todoContainer.innerHTML = html;
-      const btnDelete = todoContainer.querySelectorAll('.btn-delete')
-  
-        btnDelete.forEach(btn => {
-          btn.addEventListener('click', ({target: { dataset }}) => {
-            deleteTodos(dataset.id)
+      const btnDelete = todoContainer.querySelectorAll(".btn-delete");
 
-            alert('투두리스트 삭제!');
-          })
-        })
+      btnDelete.forEach((btn) => {
+        btn.addEventListener("click", ({ target: { dataset } }) => {
+          deleteTodos(dataset.id);
+
+          alert("투두리스트 삭제!");
+        });
+      });
     });
   });
 
@@ -212,9 +211,5 @@
   export const onGettodo = (callback) =>
     onSnapshot(collection(db, "todos"), callback);
 
-  export const deleteTodos = id => deleteDoc(doc(db, 'todos', id))
-
-
-
-
+  export const deleteTodos = (id) => deleteDoc(doc(db, "todos", id));
 </script>
