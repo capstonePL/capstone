@@ -93,7 +93,7 @@
         <div class="underba"></div>
         
         <div class="detaile_all" style="
-        margin-left: 25px; line-height: 350%;
+        margin-left: 25px; 
         ">
         <p>
           <div class="group_name" 
@@ -104,12 +104,12 @@
             class="write"
             placeholder="그룹명을 적어주세요."
             style="
-            margin-right: 0px;
-            margin-left: 40px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-right: 30px;
-            padding-left: 5px;"
+            padding-left: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 0px;
+            margin-left: 0px;
+        "
         
           />
         </div>
@@ -123,11 +123,13 @@
             class="write"
             placeholder="숫자만 적어주세요."
             style="
-            padding-left: 5px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-right: 30px;
-            margin-left: 20px;
+            
+            padding-left: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 0px;
+            margin-left: 0px;
+        
         "
           />
         </div>
@@ -140,11 +142,13 @@
             class="write"
             placeholder="숫자만 적어주세요."
             style="
-            padding-left: 5px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-right: 30px;
-            margin-left: 25px;
+            
+            padding-left: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 0px;
+            margin-left: 0px;
+        
         "
         required
           />
@@ -153,29 +157,35 @@
       </div>
         <p>
           <div class="notice" style="
-          margin-left: 23px;
+          
+          margin-left: 0px;
           margin-top: 10px;
           margin-bottom: 0px;
+      
       ">그룹 소개<br>
             <textarea
             id="groupnotice"
             class="write"
             placeholder="그룹 소개를 적어주세요."
             style="
+            
             padding-top: 5px;
             padding-left: 5px;
-            padding-right: 145px;
-            padding-bottom: 50px;
+            padding-right: 50px;
+            padding-bottom: 25px;
             margin-top: 13px;
+        
         "></textarea><br>
         </div>
         </p>
         <div style="text-align: center">
         <button id="btn-task-save" type="submit" class="com" style="
         
+        
         padding-top: 6px;
         padding-bottom: 6px;
-        margin-top: 60px;
+        margin-top: 20px;
+        
     
           ">완료</button>
           </div>
@@ -232,3 +242,4 @@
       addDoc(collection(db, "group"), { name, time, people, notice });
   </script>
   
+
