@@ -175,7 +175,7 @@ input {
   font-size: 14px;
   color: #aaaaaa;
 }
-/*input.icon {
+input.icon {
   
   color: white;
   background: #e3c18d;
@@ -188,12 +188,12 @@ input {
   border: 1px solid transparent;
   transition: all 0.3s ease;
   cursor: pointer;
-}*/
-/*.icon:hover {
+}
+.icon:hover {
   color: #e3c18d;
   background-color: white;
   border-color: #e3c18d;
-}*/
+}
 h4 {
   font-size: 16px;
   color: #474747;
