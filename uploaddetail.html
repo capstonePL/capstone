@@ -1,238 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
-    <meta charset="UTF-8" />
+    <meta chatset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="mypage.css" />
-    <title>mypage</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>uploadboard</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    <script
-      src="https://kit.fontawesome.com/0f868d6f71.js"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
-    ></script>
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@900&family=Koulen&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap");
     </style>
 
-  
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <meta name="viewport" contnet="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0f868d6f71.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Hahmlet", serif;
+      }
+      h5 {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .gnb {
+        width: 100%;
+        height: 72px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #fafafa;
+        box-shadow: inset 0 1px 0 0 rgba(17, 10, 10, 0.08);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+      }
+      .gnb a {
+        width: 20%;
+        height: 100%;
+        border: 2px solid #d8d8d8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.3;
+      }
+      .gnb .active {
+        opacity: 1;
+        color: #574a5a;
+      }
+      button {
+        font-size: 18px;
+        background-color: black;
+        color: aliceblue;
+        border: 0;
+        cursor: 0;
+      }
+    </style>
   </head>
+
   <body>
-    <h1 class="main">MY PAGE</h1>
-    <div id="mypage-container" style="margin-left: 20px;
-    margin-right: 20px;
-    text-align: center;
-    margin-top: 70px;"></div>
+    <div
+      class="container"
+      style="text-align: center"
+      style="margin-top: 45px; text-align: center"
+    >
+      <h1 style="margin-top: 70px">오늘의 운동 영상</h1>
 
-    <div class="detaile" style="line-height: 500%; ">
-      
-    </div>
-    <div class="btn-edit" style="text-align: center">
-      <button id="show" class="btn-set">프로필 수정하기</button>
-      <div class="background">
-        <div class="window">
-          <div class="popup">
-            <div style="text-align: light;">
-            <button
-                id="close"
-                class="clo"
-                style="
-                  padding-top: 0px;
-                  padding-left: 5px;
-                  padding-right: 5px;
-                  margin-left: 310px;
-                  margin-top: 5px;
-                  margin-right: 0px;
-                "
-              >
-                X
-              </button>
-            </div>
-            <form id="mypage-form">
-              <h3 style="font-weight: bold; margin-top: 30px; ">프로필 수정</h3>
-              
-              <div class="detaile_all" style="
-               line-height: 400%;
-              ">
-              <p>
-                <div class="nick_name" style="font-weight: bold;" 
-            >닉네임
-                <input
-                  type="text"
-                  id="username"
-                  class="write"
-                  placeholder="닉네임을 적어주세요." 
-                />
-              </div>
-              </p>
-              
-              <p>
-                <div class="now" style="font-weight: bold;">현재체중
-                <input
-                  type="text"
-                  id="now"
-                  class="write"
-                  placeholder="0kg" 
-         
-                />
-              </div>
-              </p>
-              <p>
-                <div style="font-weight: bold;">목표체중
-                <input
-                  type="text"
-                  id="goal"
-                  class="write"
-                  placeholder="0kg"
-                />
-              </div>
-              </p>
-            </div>
-              
-              <div style="text-align: center">
-              <button type="button" id="updatemypage" class="com" 
-              value=" 창닫기" onClick='window.close()'
-              style="
-              padding-top: 6px;
-              padding-bottom: 6px;
-              
-          
-                ">완료</button>
-                </div>
-            </form>
+      <div class="m-3 bg-success"></div>
 
-          </div>
-        </div>
+      <div class="form-row float-right">
+        <button
+          type="button"
+          class="rounded-pill"
+          style="
+            margin-left: 247px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          "
+          onclick="location.href='uploadpage.html'"
+        >
+          추천하기
+        </button>
       </div>
-    </div>
-    <br>
-    <div class="logout" style="text-align: right;">
-      <a href="login.html">
-        <button type="button" 
-        style="margin-right: 10px;margin-top: 110px;"
-        class="btn btn-outline-danger">로그아웃</button>
-      </a>
+
+      <div id="tasks-container"></div>
     </div>
 
-    <nav class="gnb">
-      <a href="groupadd.html" class="group mouse-effect">
-        <i class="fa-solid fa-user-group"></i>
-      </a>
-      <a href="calendar.html" class="calendar mouse-effect">
-        <i class="fa-solid fa-calendar-days"></i>
-      </a>
-      <a href="timer.html" class="home mouse-effect">
-        <i class="fa-solid fa-house"></i>
-      </a>
-      <a href="uploaddetail.html" class="routine mouse-effect">
-        <i class="fa-solid fa-upload"></i>
-      </a>
-      <a href="mypage.html" class="my mouse-effect active">
-        <i class="fa-solid fa-circle-user"></i>
-      </a>
-    </nav>
-    <body style="overflow-y: hidden"></body>
-
+    <div class="footer">
+      <nav class="gnb">
+        <a href="group.html" class="group mouse-effect">
+          <i class="fa-solid fa-user-group"></i>
+        </a>
+        <a href="calendar.html" class="calendar mouse-effect">
+          <i class="fa-solid fa-calendar-days"></i>
+        </a>
+        <a href="timer.html" class="home mouse-effect">
+          <i class="fa-solid fa-house"></i>
+        </a>
+        <a href="uploaddetail.html" class="routine mouse-effect active">
+          <i class="fa-solid fa-upload"></i>
+        </a>
+        <a href="mypage.html" class="my mouse-effect">
+          <i class="fa-solid fa-circle-user"></i>
+        </a>
+      </nav>
+    </div>
   </body>
 </html>
-<script>
-  function show() {
-    document.querySelector(".background").className = "background show";
-  }
 
-  function close() {
-    document.querySelector(".background").className = "background";
-  }
-
-  document.querySelector("#show").addEventListener("click", show);
-  document.querySelector("#close").addEventListener("click", close);
-
-
-</script>
 <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-    import { getFirestore, deleteDoc, updateDoc, setDoc, addDoc, doc, collection, getDocs, onSnapshot, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+  import {
+    getFirestore,
+    setDoc,
+    addDoc,
+    doc,
+    collection,
+    getDocs,
+    onSnapshot,
+    query,
+    orderBy,
+    limit,
+  } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDTVr0a8LU3blZeAuckU4hViAIu622salU",
-      authDomain: "capdi-6626e.firebaseapp.com",
-      databaseURL: "https://capdi-6626e-default-rtdb.firebaseio.com",
-      projectId: "capdi-6626e",
-      storageBucket: "capdi-6626e.appspot.com",
-      messagingSenderId: "597227556809",
-      appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218"
-    };
+  const firebaseConfig = {
+    apiKey: "AIzaSyDTVr0a8LU3blZeAuckU4hViAIu622salU",
+    authDomain: "capdi-6626e.firebaseapp.com",
+    databaseURL: "https://capdi-6626e-default-rtdb.firebaseio.com",
+    projectId: "capdi-6626e",
+    storageBucket: "capdi-6626e.appspot.com",
+    messagingSenderId: "597227556809",
+    appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218",
+  };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore();
-    const mypageContainer = document.getElementById('mypage-container')
-    const mypageForm = document.getElementById("mypage-form")
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore();
 
+  const tasksContainer = document.getElementById("tasks-container");
 
-    window.addEventListener("DOMContentLoaded", async () => {
-      
-        onGetmypage((querySnapShot)=> {
-        let html = "";
+  window.addEventListener("DOMContentLoaded", async () => {
+    onGetTasks((querySnapShot) => {
+      let html = "";
 
-        querySnapShot.forEach((doc) => {
-          const mypage = doc.data()
+      querySnapShot.forEach((doc) => {
+        const task = doc.data();
 
-          html += `
-                <div class="my" >
-                    <h4 style="
-                        margin-bottom: 20px;
-                        margin-top: 40px;
-                    ">닉네임 : ${mypage.username}</h4>
-                    <h4 style="
-                      margin-bottom: 20px;
-                  ">현재체중 : ${mypage.now} kg</h4>
-                                      <h4 style="
-                      margin-bottom: 40px;
-                  ">목표체중 : ${mypage.goal} kg</h4>
+        html += `
+                <div>
+                  <div class=container>
+                    <h5>${task.title}</h5>
+                    <hr color="black">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/${task.data}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br>
+                    <br>
+                  </div>
                 </div>
-           `
-        });
-        
-    
-        mypageContainer.innerHTML = html;
-
+          `;
       });
+
+      tasksContainer.innerHTML = html;
+    });
   });
 
-    export const getmypage = () => getDocs(collection(db, 'mypage'))
-    export const onGetmypage = (callback) => onSnapshot(collection(db, "mypage"), callback)
+  export const getTasks = () => getDocs(collection(db, "board"));
 
-
-    updatemypage.addEventListener('click', (e) => {
-      
-      var username = document.getElementById('username').value;
-      var now = document.getElementById('now').value;
-      var goal = document.getElementById('goal').value;
-
-      updateDoc(doc(db, "mypage", 'Obl9K6CrM5Ohfxxmymua'), {
-        username: username,
-        now: now,
-        goal: goal
-      });
-
-      mypageForm.reset()
-      alert('프로필 수정 완료!');
-
-    });
-
-
-
+  export const onGetTasks = (callback) =>
+    onSnapshot(collection(db, "board"), callback);
 </script>
 
 
