@@ -179,9 +179,9 @@ input.icon {
   font-size: 20px;
   color: white;
   background: #e3c18d;
-  width: auto;
+  width: 30px;
   border-radius: 100%;
-  
+  padding: 0px 5px;
   position: relative;
   right: -35%;
   top: -50px;
