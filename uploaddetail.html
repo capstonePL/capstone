@@ -174,7 +174,7 @@
                   <div class=container>
                     <h5>${task.title}</h5>
                     <hr color="black">
-                    <h3>${task.data}<h3>
+                    <h3><a href="${task.data}"></a><h3>
                     <br>
                     <br>
                   </div>
@@ -191,3 +191,4 @@
   export const onGetTasks = (callback) =>
     onSnapshot(collection(db, "board"), callback);
 </script>
+
