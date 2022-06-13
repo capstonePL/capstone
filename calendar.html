@@ -18,7 +18,7 @@
     ></script>
   </head>
   <body>
-    <div class="calendar">
+    <div class="calendar" style="margin-top: 0px; margin-bottom: 0px">
       <div class="header" style="margin-top: 35px">
         <div class="year-month"></div>
         <div class="nav">
@@ -40,13 +40,20 @@
         <div class="dates"></div>
         <div id="show">
           <button
-            class="w-btn w-btn-indigo"
+            class="todo"
             type="button"
-            style="margin-top: 60px; margin-left: 90px"
+            style="
+              margin-top: 10px;
+              margin-left: 0px;
+              padding-bottom: 5px;
+              padding-top: 5px;
+              margin-bottom: 25px;
+            "
           >
             TO DO
           </button>
         </div>
+        <div id="todo-container"></div>
         <div class="background">
           <div class="window">
             <div style="overflow: auto" class="popup">
@@ -132,6 +139,11 @@
     addDoc,
     doc,
     collection,
+    getDocs,
+    onSnapshot,
+    query,
+    orderBy,
+    limit,
   } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -158,4 +170,30 @@
       task: task,
     });
   });
+
+  const todoContainer = document.getElementById("todo-container");
+
+  window.addEventListener("DOMContentLoaded", async () => {
+    onGettodo((querySnapShot) => {
+      let html = "";
+
+      querySnapShot.forEach((doc) => {
+        const todo = doc.data();
+
+        html += `
+                <div class="todoss">
+                    <li > ${todo.task}</li>
+                    <hr class="my-hr1" color = "black">
+                </div>
+          `;
+      });
+
+      todoContainer.innerHTML = html;
+    });
+  });
+
+  export const gettodo = () => getDocs(collection(db, "todos"));
+
+  export const onGettodo = (callback) =>
+    onSnapshot(collection(db, "todos"), callback);
 </script>
