@@ -244,5 +244,5 @@
   });
 
   export const saveTask = (username, email, now, goal) =>
-    setDoc(collection(db, "users"), { username, email, now, goal });
+    addDoc(collection(db, "users"), { username, email, now, goal });
 </script>
