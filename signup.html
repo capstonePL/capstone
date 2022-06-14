@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Koulen&display=swap");
-    </style>
+        @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Koulen&display=swap');
+        </style>
 
     <style>
-      body {
-        background-color: #e0e0e0;
-        font-family: "Hahmlet", serif;
-      }
-      h1 {
+    body {
+      background-color: #e0e0e0;
+      font-family: "Hahmlet", serif;
+    }
+    h1 {
         text-align: center;
         box-sizing: border-box;
         font-size: 55px;
@@ -30,158 +25,110 @@
         font-weight: 900;
         font-family: "Koulen", cursive;
         letter-spacing: 3px;
-      }
-      h3 {
-        font-family: "Hahmlet", serif;
-        font-size: 30px;
-        font-weight: 900;
-        letter-spacing: 3px;
-      }
-      input {
-        font-size: 18px;
-        border: 0;
-        cursor: 0;
-      }
-      button {
-        font-size: 22px;
-        background-color: #5e5e5e;
-        color: aliceblue;
-        border: 0;
-        cursor: 0;
-      }
-      a {
-        color: #842029;
-      }
+    }
+    h3 {
+      font-family: "Hahmlet", serif;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+    input {
+      font-size: 18px;
+      border: 0;
+      cursor: 0;
+    }
+    button {
+      font-size: 22px;
+      background-color: #5e5e5e;
+      color: aliceblue;
+      border: 0;
+      cursor: 0;
+      
+    }
+    a {
+      color: #842029;
+    }
     </style>
   </head>
+  
+
 
   <body>
     <div class="m-4 bg-success"></div>
-    <h1 style="margin-top: 90px; margin-bottom: 60px">HOMEMOVE</h1>
+    <h1 style="margin-top: 90px;margin-bottom: 60px;">HOMEMOVE</h1>
 
     <div class="m-4 bg-success"></div>
 
-    <form id="task-form" style="text-align: center" ;>
-      <p style="margin-bottom: 40px">
-        <input
-          type="text"
-          id="username"
-          class="rounded-pill"
-          name="username"
-          placeholder="닉네임을 입력하세요"
-          style="
+    <form id="task-form"  style="text-align: center";>
+        <p style="margin-bottom: 40px">
+            <input type="text" id="username" class="rounded-pill" name="username" placeholder="닉네임을 입력하세요"
+            style="
             border: 0 solid black;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 10px;
-          "
-          required
-        />
-      </p>
-      <p style="margin-bottom: 40px">
-        <input
-          type="text"
-          id="email"
-          class="rounded-pill"
-          name="email"
-          placeholder="메일을 입력하세요"
-          style="
+            "    required>
+            </p>
+        <p style="margin-bottom: 40px">
+            <input type="text" id="email" class="rounded-pill" name="email" placeholder="메일을 입력하세요"  
+            style="
             border: 0 solid black;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 10px;
-          "
-          required
-        />
-      </p>
-      <p style="margin-bottom: 40px">
-        <input
-          type="password"
-          id="password"
-          class="rounded-pill"
-          name="password"
-          placeholder="비밀번호를 입력하세요"
-          style="
+            "    required>
+            </p>
+        <p style="margin-bottom: 40px">
+            <input type="password" id="password" class="rounded-pill" name="password" placeholder="비밀번호를 입력하세요" 
+            style="
             border: 0 solid black;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 10px;
-          "
-          required
-        />
-      </p>
-      <p style="margin-bottom: 40px">
-        <input
-          type="text"
-          id="now"
-          class="rounded-pill"
-          name="now"
-          placeholder="현재 체중을 입력하세요"
-          style="
-            border: 0 solid black;
+            "    required>
+            </p>
+            <p style="margin-bottom: 40px">
+              <input type="text" id="now" class="rounded-pill" name="now" placeholder="현재 체중을 입력하세요"  
+              style="
+              border: 0 solid black;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              padding-left: 10px;
+              "    required>
+              </p>
+            <p style="margin-bottom: 40px">
+              <input type="text" id="goal" class="rounded-pill" name="goal" placeholder="목표 체중을 입력하세요"  
+              style="
+              border: 0 solid black;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              padding-left: 10px;
+              "    required>
+              </p>
+            <button type="submit" id="signup" class="rounded-pill" name="signup" value="SIGN UP"
+            style="
+            margin-left: 0px;
+            margin-top: 20px;
+            padding-left: 90px;
+            padding-right: 90px;
             padding-top: 5px;
             padding-bottom: 5px;
-            padding-left: 10px;
-          "
-          required
-        />
-      </p>
-      <p style="margin-bottom: 40px">
-        <input
-          type="text"
-          id="goal"
-          class="rounded-pill"
-          name="goal"
-          placeholder="목표 체중을 입력하세요"
-          style="
-            border: 0 solid black;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 10px;
-          "
-          required
-        />
-      </p>
-      <button
-        type="submit"
-        id="signup"
-        class="rounded-pill"
-        name="signup"
-        value="SIGN UP"
-        style="
-          margin-left: 0px;
-          margin-top: 20px;
-          padding-left: 90px;
-          padding-right: 90px;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          margin-right: 0px;
-        "
-      >
-        회원가입
-      </button>
+            margin-right: 0px;
+            ">회원가입</button>
 
-      <div class="m-4 bg-success"></div>
-      <br />
-      <a href="index.html">이미 회원이신가요?</a>
-    </form>
-  </body>
+            <div class="m-4 bg-success"></div>
+            <br>
+            <a href="login.html">이미 회원이신가요?</a>
+      </form>
+</body>
+
 </html>
 
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-  import {
-    getFirestore,
-    setDoc,
-    addDoc,
-    doc,
-    collection,
-  } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
-  import {
-    getAuth,
-    createUserWithEmailAndPassword,
-  } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+  import { getFirestore, setDoc, addDoc, doc, collection } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -193,56 +140,64 @@
     projectId: "capdi-6626e",
     storageBucket: "capdi-6626e.appspot.com",
     messagingSenderId: "597227556809",
-    appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218",
+    appId: "1:597227556809:web:6fa7cb02cc8bf1b2e6e218"
   };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore();
-  const auth = getAuth();
+  const auth = getAuth(); 
 
-  signup.addEventListener("click", (e) => {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var username = document.getElementById("username").value;
-    var now = document.getElementById("now").value;
-    var goal = document.getElementById("goal").value;
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
+signup.addEventListener('click',(e) => {
 
-        alert("회원가입 성공!");
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var username = document.getElementById('username').value;
+  var now = document.getElementById('now').value;
+  var goal = document.getElementById('goal').value;
 
-        taskForm.reset();
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user
+      
+      alert('회원가입 성공!');
+      
+      taskForm.reset()
+      
+      window.location.href = "timer.html";
 
-        window.location.href = "timer.html";
+      // ...
+  })
+  .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
 
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        alert(errorMessage);
-        // ..
-      });
+      alert(errorMessage);
+      // ..
   });
+})
 
-  const taskForm = document.getElementById("task-form");
 
-  taskForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+const taskForm = document.getElementById("task-form")
 
-    const username = taskForm["username"];
-    const email = taskForm["email"];
-    const now = taskForm["now"];
-    const goal = taskForm["goal"];
 
-    saveTask(username.value, email.value, now.value, goal.value);
-  });
 
-  export const saveTask = (username, email, now, goal) =>
-    addDoc(collection(db, "users"), { username, email, now, goal });
+taskForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+      
+      const username = taskForm['username']
+      const email = taskForm['email']
+      const now = taskForm['now']
+      const goal = taskForm['goal']
+      
+
+      saveTask(username.value, email.value, now.value, goal.value)
+
+  })
+
+export const saveTask = (username, email, now, goal) => 
+  setDoc(collection(db, "users"), { username, email, now, goal});
+
 </script>
