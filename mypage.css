@@ -103,8 +103,11 @@
   transform: scale(0.9);
 }
 
-.my {
+.mypage-container {
   font-size: 25px;
+  border: 2px solid rgba(17, 10, 10, 0.08);
+}
+.my {
   border: 2px solid rgba(17, 10, 10, 0.08);
 }
 .com {
