@@ -191,13 +191,14 @@ taskForm.addEventListener('submit', (e) => {
       const email = taskForm['email']
       const now = taskForm['now']
       const goal = taskForm['goal']
+      const pw = taskForm['password']
       
 
-      saveTask(username.value, email.value, now.value, goal.value)
+      saveTask(username.value, email.value, now.value, goal.value, pw.value)
 
   })
 
-export const saveTask = (username, email, now, goal) => 
-  setDoc(collection(db, "users"), { username, email, now, goal});
+export const saveTask = (username, email, now, goal, pw) => 
+  addDoc(collection(db, "users"), { username, email, now, goal, pw});
 
 </script>
