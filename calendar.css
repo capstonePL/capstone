@@ -177,8 +177,7 @@ input {
 }
 input.icon {
   font-size: 10px;
-  color: white;
-  background: #e3c18d;
+  color: rgb(23, 22, 22);
   width: 30px;
   border-radius: 100%;
   padding: 0px 5px;
@@ -190,9 +189,9 @@ input.icon {
   cursor: pointer;
 }
 .icon:hover {
-  color: #e3c18d;
+  color: #21201ec5;
   background-color: white;
-  border-color: #e3c18d;
+  border-color: #8e8b8591;
 }
 h4 {
   font-size: 16px;
