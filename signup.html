@@ -55,57 +55,73 @@
 
   <body>
     <div class="m-4 bg-success"></div>
-    <h1 style="margin-top: 90px;margin-bottom: 60px;">HOMEMOVE</h1>
+    <h1 style="margin-top: 90px; margin-bottom: 60px;">HOMEMOVE</h1>
 
     <div class="m-4 bg-success"></div>
 
-    <form id="task-form"  style="text-align: center";>
-        <p style="margin-bottom: 40px">
+
+          <div class="container" style="text-align: center";>
             <input type="text" id="username" class="rounded-pill" name="username" placeholder="닉네임을 입력하세요"
             style="
             border: 0 solid black;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 10px;
-            "    required>
-            </p>
-        <p style="margin-bottom: 40px">
-            <input type="text" id="email" class="rounded-pill" name="email" placeholder="메일을 입력하세요"  
+            "  />
+             <br>
+             <div class="m-4 bg-success"></div>
+      
+            <input type="text" id="email" class="rounded-pill" name="email" placeholder="이메일을 입력하세요"  
             style="
             border: 0 solid black;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 10px;
-            "    required>
-            </p>
-        <p style="margin-bottom: 40px">
+            " />
+             <br>
+             <div class="m-4 bg-success"></div>
+           
+     
             <input type="password" id="password" class="rounded-pill" name="password" placeholder="비밀번호를 입력하세요" 
             style="
             border: 0 solid black;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 10px;
-            "    required>
-            </p>
-            <p style="margin-bottom: 40px">
+            " /> 
+             <br>
+             <div class="m-4 bg-success"></div>
+          
               <input type="text" id="now" class="rounded-pill" name="now" placeholder="현재 체중을 입력하세요"  
               style="
               border: 0 solid black;
               padding-top: 5px;
               padding-bottom: 5px;
               padding-left: 10px;
-              "    required>
-              </p>
-            <p style="margin-bottom: 40px">
+              " />
+               <br>
+               <div class="m-4 bg-success"></div>
+           
+      
               <input type="text" id="goal" class="rounded-pill" name="goal" placeholder="목표 체중을 입력하세요"  
               style="
               border: 0 solid black;
               padding-top: 5px;
               padding-bottom: 5px;
               padding-left: 10px;
-              "    required>
-              </p>
-            <button type="submit" id="signup" class="rounded-pill" name="signup" value="SIGN UP"
+              " />
+               <br>
+               <div class="m-4 bg-success"></div>
+       
+            <label>성별</label> 
+            <select id="Genbox">
+              <option value="Male">남</option>
+              <option value="Female">여</option>
+            </select>
+            <br>
+            <div class="m-4 bg-success"></div>
+
+            <button  id="insbtn" class="rounded-pill" 
             style="
             margin-left: 0px;
             margin-top: 20px;
@@ -119,7 +135,9 @@
             <div class="m-4 bg-success"></div>
             <br>
             <a href="login.html">이미 회원이신가요?</a>
-      </form>
+
+          </div>
+      
 </body>
 
 </html>
@@ -146,59 +164,61 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore();
-  const auth = getAuth(); 
+  const auth = getAuth();
 
 
-signup.addEventListener('click',(e) => {
+  let username = document.getElementById("username");
+  let email = document.getElementById("email");
+  let pw = document.getElementById("password");
+  let now = document.getElementById("now");
+  let goal = document.getElementById("goal");
+  let genbox = document.getElementById("Genbox");
 
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
-  var username = document.getElementById('username').value;
-  var now = document.getElementById('now').value;
-  var goal = document.getElementById('goal').value;
-
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user
-      
-      alert('회원가입 성공!');
-      
-      taskForm.reset()
-      
-      window.location.href = "timer.html";
-
-      // ...
-  })
-  .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
-      alert(errorMessage);
-      // ..
-  });
-})
-
-
-const taskForm = document.getElementById("task-form")
+  let insBtn  = document.getElementById("insbtn");
 
 
 
-taskForm.addEventListener('submit', (e) => {
-      e.preventDefault()
-      
-      const username = taskForm['username']
-      const email = taskForm['email']
-      const now = taskForm['now']
-      const goal = taskForm['goal']
-      const pw = taskForm['password']
-      
 
-      saveTask(username.value, email.value, now.value, goal.value, pw.value)
+  insBtn.addEventListener('click',(e) => {
 
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+   
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user
+        
+        alert('회원가입 성공!');
+        
+        window.location.href = "timer.html";
+
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+        // ..
+    });
   })
 
-export const saveTask = (username, email, now, goal, pw) => 
-  addDoc(collection(db, "users"), { username, email, now, goal, pw});
+  async function AddDocument_CustomID() {
+    var ref = doc(db, "users", pw.value);
+
+    const docRef = await setDoc(ref, {
+      username: username.value,
+      email: email.value,
+      pw: pw.value,
+      now: now.value,
+      goal: goal.value,
+      genbox: genbox.value,
+    })
+  
+  }
+
+  insBtn.addEventListener("click", AddDocument_CustomID);
+
 
 </script>
